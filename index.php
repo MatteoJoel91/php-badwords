@@ -7,7 +7,12 @@
     echo '<br><br><br>';
 
     echo 'La parola censurata è: ';
-    $parolaCensurata = $_GET['parola'];
+    if(isset($_GET['parola'])){
+       $parolaCensurata = $_GET['parola']; 
+    }else{
+        $parolaCensurata = null;
+    }
+    
     echo $parolaCensurata;
     $paragrafoCensura = str_replace($parolaCensurata, '***', $paragrafoValido);
     echo $paragrafoCensura;
